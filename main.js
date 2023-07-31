@@ -35,7 +35,6 @@ const createWindow = () => {
   }
 
   mainWindow.loadFile("index.html");
-
   const menuTemplate = [
     {
       label: "File",

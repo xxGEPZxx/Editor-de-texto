@@ -10,12 +10,21 @@
       href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Proyecto de Compiladores</title>    
+    <style type="text/css" media="screen">
+      #editor { 
+      position: relative;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="title-bar">
-      <span class="document-name" id="documentName">no file selected</span>
+      <span class="document-name" id="documentName">Archivo no selecionado</span>
 
       <div class="menu-section">
         <button id="openDocumentBtn">
@@ -26,8 +35,34 @@
         </button>
       </div>
     </div>
-    <main>
+    <main>  
+      
+    <!--   <div class="editorContainer">
+
+        <div id="editor">function foo(items) {
+            var x = "All this is syntax highlighted";
+            return x;
+            }</div>
+
+        <div class="codeStat">
+            <div class="currentLang">JAVASCRIPT, TEXT</div>
+        </div>
+
+    </div> -->
       <textarea id="fileTextarea" disabled></textarea>
+      <div class="Datos">        
+      <p id="Espacios"></p>
+      <p id="Palabras"></p>
+      <p id="letras"></p>
+      <p id="caracterNoV"></p>
+      </div>
     </main>
+    <script src="./js/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.session.setMode("ace/mode/javascript");
+        editor.session.setMode("ace/mode/text");
+    </script>
   </body>
 </html>
